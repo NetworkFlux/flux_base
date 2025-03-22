@@ -1,7 +1,2 @@
-1. Find where to store the database data.
-	Default path: ~/.local/share/<your_program>/
-2. Make installation script.
-	On installation ask the user for desired path
-	Add ENV variable with the path.
 3. Make uninstallation script.
 4. Define database structure. Database -> Collection
