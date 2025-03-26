@@ -21,17 +21,8 @@ void	add_env_variable(const char *path, const char *home_path)
 	snprintf(profile_file, sizeof(profile_file), "%s/%s", home_path, profile_type);
 	snprintf(command, sizeof(command), "echo 'export %s=\"%s\"' >> %s", ENV_VAR, path, profile_file);
 	system(command);
-
-	snprintf(command, sizeof(command), "%s -c 'source %s'", getenv("SHELL"), profile_file);
-	int	result = system(command);
-
-	if (result == 0)
-		printf("Environment variable set and loaded: %s=%s\n", ENV_VAR, path);
-	else
-		printf("Enviromnent variable added but could not auto-load. Please run: source %s\n", profile_file);
-
-		
-
+	
+	printf("Environment variable set. Please run 'source %s' to load it into the current session.\n", profile_file);
 }
 
 void	create_directory(const char *path)
